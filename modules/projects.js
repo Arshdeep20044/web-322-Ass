@@ -1,10 +1,10 @@
-// modules/projects.js
-const projectData = require("../data/projectData");
-const sectorData = require("../data/sectorData");
+const projectData = require("../data/projectData.json");
+const sectorData = require("../data/sectorData.json");
+
 
 let projects = [];
 
-// Initialize: combine projects with their sector names
+
 function initialize() {
   return new Promise((resolve, reject) => {
     try {
@@ -19,7 +19,6 @@ function initialize() {
   });
 }
 
-// Get all projects
 function getAllProjects() {
   return new Promise((resolve, reject) => {
     try {
@@ -30,7 +29,7 @@ function getAllProjects() {
   });
 }
 
-// Get project by ID
+
 function getProjectById(projectId) {
   return new Promise((resolve, reject) => {
     const idNum = Number(projectId);
@@ -40,7 +39,7 @@ function getProjectById(projectId) {
   });
 }
 
-// Get projects by sector (case-insensitive, partial)
+
 function getProjectsBySector(sector) {
   return new Promise((resolve, reject) => {
     const key = String(sector || "").toLowerCase();
